@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal & Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/starterpage.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo-text">
+            <span class="the">The</span>
+            <span class="royal">Royal</span>
+            <span class="and">&</span>
+            <span class="co">Co</span>
+        </h1>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="signatures.html" class="nav-item">Signatures</a>
+            <a href="main-dish.html" class="nav-item">Main Dishes</a>
+            <a href="wine-list.html" class="nav-item">À La Carte</a>
+            <a href="cocktails.html" class="nav-item">Cocktails</a>
+            <a href="wine-list.html" class="nav-item">Wines</a>
+            
+            <a href="reservationpage.html" class="nav-item special">Reservations</a>
+        </nav>
+    </div>
+    <script>
+    window.addEventListener('scroll', function() {
+        const logoContainer = document.querySelector('.logo');
+        
+        if (window.scrollY > 150) {
+            logoContainer.classList.add('scrolled');
+        } else {
+            logoContainer.classList.remove('scrolled');
+        }
+    });
+    </script>
+</body>
+</html>

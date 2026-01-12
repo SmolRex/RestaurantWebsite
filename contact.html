@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Royce & Co.</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="picture/logoweb.png" type="image/x-icon">
+    <style>
+        .contact-section {
+            min-height: 100vh;
+            background-color: var(--primary-color);
+            padding: 120px 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-title {
+            margin-bottom: 40px;
+        }
+
+        .contact-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details p {
+            font-size: 1rem;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 20px;
+            }
+        }
+
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+            margin-right: 5px;
+        }
+
+        .breadcrumb span {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-overlay"></div>
+    
+    <nav class="side-nav">
+        <button class="close-nav">
+            <div class="x-icon"></div>
+            CLOSE
+        </button>
+        
+        <div class="nav-section">
+            <h2 class="nav-section-title">Menu</h2>
+            <ul class="nav-links">
+                <li class="nav-link"><a href="signatures.html">Signatures</a></li>
+                <li class="nav-link"><a href="a-la-carte.html">À La Carte</a></li>
+                <li class="nav-link"><a href="main-dish.html">Main Dish</a></li>
+                <li class="nav-link"><a href="wine-list.html">Wine List</a></li>
+                <li class="nav-link"><a href="cocktails.html">Cocktails</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h2 class="nav-section-title">Experience</h2>
+            <ul class="nav-links">
+                <li class="nav-link"><a href="about.html">About Us</a></li>
+                <li class="nav-link"><a href="contact.html">Contact Us</a></li>
+                <li class="nav-link"><a href="reservationpage.html">Reservations</a></li>
+                <li class="nav-link"><a href="reservationlist.html">Reserved Customers</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header>
+        <nav>
+            <button class="menu-btn" data-nav-toggle>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                MENU
+            </button>
+
+            <div class="logo">
+                <img src="picture/logonoa.png" alt="Le Royal Logo" class="logo-large">
+                <img src="picture/logo2.png" alt="Le Royal Small Logo" class="logo-small">
+            </div>
+
+            <a href="reservationpage.html" class="reservation-btn">FIND A TABLE</a>
+        </nav>
+    </header>
+
+    <main class="contact-section">
+        <div class="contact-container">
+            <div class="contact-title">
+                <div class="brand-name">ROYCE & CO.</div>
+                <h1>Contact Us</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> >
+                    <a href="reservationpage.html">Reservation</a> >
+                    <span>Contact Us</span>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <p><strong>Phone:</strong> +1 (212) 555-0123</p>
+                <p><strong>Email:</strong> contact@royce-co.com</p>
+                <p><strong>Address:</strong> 123 Hawthorn Lane, Cheltenham, Gloucestershire, United Kingdom</p>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.1984941253!2d-2.164961279409082!3d51.89938549225768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871b2b8c8e38e3d%3A0x5d4b7499f7d5b3af!2sCheltenham%2C%20Gloucestershire%2C%20UK!5e0!3m2!1sen!2sus!4v1690217762365!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+
+    <script src="js/logochanging.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="tel:+1-212-555-0123">+1 (212) 555-0123</a></li>
+                <li><a href="mailto:contact@royce-co.com">contact@royce-co.com</a></li>
+                <li>info@royce-co.com</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Location</h3>
+            <address>
+                123 Hawthorn Lane<br>
+                Cheltenham, Gloucestershire<br>
+                United Kingdom
+            </address>
+        </div>
+
+        <div class="footer-section">
+            <h3>Hours</h3>
+            <ul>
+                <li>Mon-Thu: 5:30 PM - 10:00 PM</li>
+                <li>Fri-Sat: 5:30 PM - 11:00 PM</li>
+                <li>Sun: 5:00 PM - 9:30 PM</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Royce & Co. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+</html>

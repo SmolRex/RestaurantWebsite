@@ -1,0 +1,145 @@
+
+
+.course-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.course-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.course-text {
+    padding-right: 30px;
+}
+
+.course-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.chef-note {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chef-note-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chef-note-content {
+    font-style: italic;
+    color: #666;
+}
+
+.course-display {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-card {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.course-card:last-child {
+    border-bottom: none;
+}
+
+.course-card h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.course-details h3 {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.course-details p {
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: block;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.course-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.highlight-item {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-number {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.highlight-label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .course-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-text {
+        padding-right: 0;
+    }
+    
+    .course-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .chef-note {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .course-highlights {
+        grid-template-columns: 1fr;
+    }
+}

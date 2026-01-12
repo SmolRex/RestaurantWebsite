@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Reservation - Royce & Co.</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="picture/logoweb.png" type="image/x-icon">
+    <style>
+        /* Additional styles for reservation form */
+        .reservation-section {
+            min-height: 100vh;
+            background-color: var(--primary-color);
+            padding: 120px 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .reservation-container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(180, 161, 100, 0.3);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-select option {
+    background: white;  
+    color: black;      
+    padding: 12px;     
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #c4b184;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .reservation-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="nav-overlay"></div>
+        
+        <nav class="side-nav">
+            <button class="close-nav">
+                <div class="x-icon"></div>
+                CLOSE
+            </button>
+            
+            <div class="nav-section">
+                <h2 class="nav-section-title">Menu</h2>
+                <ul class="nav-links">
+                    <li class="nav-link"><a href="signatures.html">Signatures</a></li>
+                    <li class="nav-link"><a href="a-la-carte.html">À La Carte</a></li>
+                    <li class="nav-link"><a href="main-dish.html">Main Dish</a></li>
+                    <li class="nav-link"><a href="wine-list.html">Wine List</a></li>
+                    <li class="nav-link"><a href="cocktails.html">Cocktails</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-section">
+                <h2 class="nav-section-title">Experience</h2>
+                <ul class="nav-links">
+                    <li class="nav-link"><a href="about.html">About Us</a></li>
+                    <li class="nav-link"><a href="contact.html">Contact Us</a></li>
+                    <li class="nav-link"><a href="reservationpage.html">Reservations</a></li>
+                    <li class="nav-link"><a href="reservationlist.html">Reserved Customers</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    <header>
+        <nav>
+            <button class="menu-btn" data-nav-toggle>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                MENU
+            </button>
+
+            <div class="logo">
+                <img src="picture/logonoa.png" alt="Le Royal Logo" class="logo-large">
+                <img src="picture/logo2.png" alt="Le Royal Small Logo" class="logo-small">
+            </div>
+
+            <a href="reservationpage.html" class="reservation-btn">FIND A TABLE</a>
+        </nav>
+    </header>
+    <main class="about-container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">></span>
+            <a href="reservationpage.html">Reservation</a>
+
+    <main class="reservation-section">
+        <div class="reservation-container">
+            <div class="form-title">
+                <div class="brand-name">ROYCE & CO.</div>
+                <h1>Make a Reservation</h1>
+            </div>
+
+            <form id="reservationForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="date">Date</label>
+                        <input type="date" id="date" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="time">Time</label>
+                        <select id="time" class="form-select" required>
+                            <option value="">Select Time</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="guests">Number of Guests</label>
+                        <select id="guests" class="form-select" required>
+                            <option value="">Select Number</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7">7 People</option>
+                            <option value="8">8 People</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="occasion">Special Occasion</label>
+                        <select id="occasion" class="form-select">
+                            <option value="">Select Occasion</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="business">Business Dinner</option>
+                            <option value="date">Date Night</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label class="form-label" for="specialRequests">Special Requests</label>
+                        <textarea id="specialRequests" class="form-textarea"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="submit-btn">Confirm Reservation</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>  
+        <script src="js/logochanging.js"></script>
+        <script src="js/nav.js"></script>
+        <script>
+            document.getElementById('reservationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+        
+                // Get form values
+                const reservation = {
+                    name: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
+                    email: document.getElementById('email').value,
+                    date: document.getElementById('date').value,
+                    time: document.getElementById('time').value,
+                    guests: document.getElementById('guests').value
+                };
+        
+                // Retrieve existing reservations from sessionStorage
+                let reservations = JSON.parse(sessionStorage.getItem('reservations')) || [];
+                reservations.push(reservation);
+        
+                // Store updated reservations in sessionStorage
+                sessionStorage.setItem('reservations', JSON.stringify(reservations));
+        
+                // Redirect to reservation list page
+                window.location.href = 'reservationlist.html';
+            });
+        </script>
+</body>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="tel:+1-212-555-0123">+1 (212) 555-0123</a></li>
+                <li><a href="mailto:reservations@royce-co.com">reservations@royce-co.com</a></li>
+                <li>info@royce-co.com</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Location</h3>
+            <address>
+                123 Hawthorn Lane<br>
+                Cheltenham, Gloucestershire<br>
+                United Kingdom
+            </address>
+        </div>
+
+        <div class="footer-section">
+            <h3>Hours</h3>
+            <ul>
+                <li>Mon-Thu: 5:30 PM - 10:00 PM</li>
+                <li>Fri-Sat: 5:30 PM - 11:00 PM</li>
+                <li>Sun: 5:00 PM - 9:30 PM</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Royce & Co. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+</html>

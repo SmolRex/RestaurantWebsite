@@ -1,0 +1,262 @@
+/* Navigation Base Layout */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Navigation Components */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 24px;
+}
+
+.menu-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.menu-btn:hover .menu-icon span {
+    background-color: var(--gold);
+}
+
+.reservation-btn {
+    background: rgba(180, 161, 100, 0.3);
+    backdrop-filter: blur(10px);
+    border: none;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    text-underline-offset: 10px;
+}
+
+.reservation-btn:hover {
+    background: rgba(180, 161, 100, 0.5);
+}
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: -450px;
+    width: 450px;
+    height: 100%;
+    background-color: rgba(16, 44, 52, 0.98);
+    z-index: 999;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 120px 60px 40px;
+    overflow-y: auto;
+}
+
+.side-nav.active {
+    transform: translateX(450px);
+}
+
+/* Navigation Overlay */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px);
+    z-index: 998;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close Navigation Button */
+.close-nav {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.close-nav:hover {
+    color: var(--gold);
+}
+
+/* X Icon */
+.x-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.x-icon::before,
+.x-icon::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    transition: background-color 0.3s ease;
+}
+
+.x-icon::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.x-icon::after {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.close-nav:hover .x-icon {
+    transform: rotate(135deg);
+}
+
+/* Navigation Sections */
+.nav-section {
+    margin-bottom: 60px;
+}
+
+.nav-section-title {
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-link {
+    margin-bottom: 16px;
+}
+
+.nav-link a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    text-align: left;
+    padding: 5px 0;
+    line-height: 1.8;
+    transition: color 0.3s ease;
+}
+
+.nav-link a:hover {
+    color: var(--gold);
+}
+
+/* Navigation Media Queries */
+@media (max-width: 1024px) {
+    .side-nav {
+        width: 350px;
+        left: -350px;
+        padding: 100px 40px 40px;
+    }
+
+    .side-nav.active {
+        transform: translateX(350px);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-btn, .reservation-btn {
+        font-size: 0.75rem;
+    }
+
+    .side-nav {
+        width: 300px;
+        left: -300px;
+        padding: 80px 30px 30px;
+    }
+
+    .side-nav.active {
+        transform: translateX(300px);
+    }
+
+    .close-nav {
+        top: 30px;
+        right: 30px;
+    }
+
+    .menu-icon {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-nav {
+        width: 100%;
+        left: -100%;
+    }
+
+    .side-nav.active {
+        transform: translateX(100%);
+    }
+
+    .menu-icon {
+        width: 18px;
+    }
+
+    .menu-btn {
+        gap: 8px;
+    }
+}
+
+/* Main Content Nav State */
+.main-content.nav-active {
+    filter: blur(10px) brightness(0.3);
+}
